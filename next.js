@@ -8,7 +8,7 @@ const pdfTemplate = require("./documents");
 const app = express();
 
 const port = process.env.PORT || 5000;
-//ssss
+
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -28,7 +28,9 @@ app.get("/fetch-pdf", (req, res) => {
 });
 
 app.get("/test", (req, res, next) => {
-  res.send(pdfTemplate({name:"yondod" ,price1:12 ,price2:21 , receiptId:000}));
+  res.send(
+    pdfTemplate({ name: "yondod", price1: 12, price2: 21, receiptId: 000 })
+  );
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
