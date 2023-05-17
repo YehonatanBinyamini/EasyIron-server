@@ -22,6 +22,13 @@ app.post("/create-pdf", (req, res) => {
     res.send(Promise.resolve());
   });
 });
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+  
+  // Perform your authentication logic here
+  // For demonstration purposes, we'll just return the received credentials
+  res.json({ email, password, server: "say hi" });
+});
 
 app.get("/fetch-pdf", (req, res) => {
   res.sendFile(`${__dirname}/result.pdf`);
