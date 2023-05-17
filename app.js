@@ -4,6 +4,7 @@ const cors = require("cors");
 const pdfRouter = require("./routes/pdf");
 const usersRouter = require("./routes/users");
 const ordersRouter = require("./routes/orders");
+const mongooseConnect = require("./util/database").mongooseConnect;
 
 const app = express();
 
@@ -18,4 +19,12 @@ app.use(pdfRouter);
 app.use(usersRouter);
 //app.use(ordersRouter);
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+mongooseConnect()
+  .then((result) => {
+    console.log("connected to MongoDB");
+    app.listen(port);
+  })
+  .catch((err) => console.log(err));
+
+app.use(errorController.get404);
+//app.listen(port, () => console.log(`Listening on port ${port}`));
