@@ -22,9 +22,10 @@ app.use(usersRouter);
 mongooseConnect()
   .then((result) => {
     console.log("connected to MongoDB");
+    console.log(`Listening on port ${port}`);
     app.listen(port);
   })
   .catch((err) => console.log(err));
 
-app.use(errorController.get404);
+//app.use(errorController.get404);
 //app.listen(port, () => console.log(`Listening on port ${port}`));
