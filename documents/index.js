@@ -1,4 +1,5 @@
 const stringStyle = require("./stringStyle");
+const { createTRforL } = require("../util/trMaker");
 module.exports = ({
   name,
   totalPrice,
@@ -26,9 +27,7 @@ module.exports = ({
       <div class="invoice-box">
       <div class="row-order">
       <h4 class="align-left">
-      ${`${today.getDate()}. ${
-         today.getMonth() + 1
-      }. ${today.getFullYear()}`}
+      ${`${today.getDate()}. ${today.getMonth() + 1}. ${today.getFullYear()}`}
       </h4>
       <h4 class="align-right">בס"ד</h4>
       </div>
@@ -68,6 +67,7 @@ module.exports = ({
                <td>${Amount}</td>
                <td>${length}</td>
             </tr>
+            ${createTRforL()}
          </table>
          <br />
          <h1 class="justify-center">סה"כ: ${totalPrice} ש"ח</h1>
