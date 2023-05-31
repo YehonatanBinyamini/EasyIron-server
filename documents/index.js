@@ -1,4 +1,4 @@
-const stringStyle = require("./stringStyle")
+const stringStyle = require("./stringStyle");
 module.exports = ({
   name,
   totalPrice,
@@ -24,15 +24,18 @@ module.exports = ({
       </head>
       <body>
       <div class="invoice-box">
-      בס"ד
-      <div style="left: 200px;">
-            ${`${today.getDate()}. ${today.getMonth() + 1}. ${today.getFullYear()}`}
+      <div class="row-order">
+      <h4 class="align-left">
+      ${`${today.getDate()}. ${
+         today.getMonth() + 1
+      }. ${today.getFullYear()}`}
+      </h4>
+      <h4 class="align-right">בס"ד</h4>
       </div>
-
-      <img src=${logo} style="width: 100%; max-width: 220px; justify-content: flex-end; margin-top: -50px; margin-bottom: -50px;" />
-      <div style="text-align: right;">         
-         מספר קבלה: ${receiptId}
-         שם הלקוח: ${name}
+      <img src=${logo} class="logo-image"/>
+      <div class="align-right">
+         <label class="bold-text">שם הלקוח:</label> ${name} <br>
+         <label class="bold-text">מספר קבלה:</label> ${receiptId}
       </div>
       <table cellpadding="0" cellspacing="0">
             <tr class="heading">
@@ -67,7 +70,7 @@ module.exports = ({
             </tr>
          </table>
          <br />
-         <h1 class="justify-center">Total price: ${totalPrice}$</h1>
+         <h1 class="justify-center">סה"כ: ${totalPrice} ש"ח</h1>
       </div>
    </body>
 </html>
