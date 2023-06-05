@@ -8,7 +8,6 @@ exports.postLoginDetails = async (req, res, next) => {
   try {
     const existingUser = await User.findOne({ email: email });
     if (existingUser) {
-      console.log(existingUser.hashCode);
       isPasswordFit(existingUser.hashCode, password)
         ? (passwordIsFit = true)
         : (passwordIsFit = false);
@@ -57,3 +56,4 @@ exports.postAddUser = async (req, res, next) => {
       .json({ Login: false, error: "Failed to create user." });
   }
 };
+

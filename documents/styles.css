@@ -11,6 +11,7 @@
     justify-content: center;
     align-items: center;
     margin: 30px;
+    margin-right: -20px;
     flex-direction: column;
 }
 
@@ -36,6 +37,7 @@
     height: 50px;
     text-align: center;
     font-weight: bold;
+    z-index: 1;
 }
 
 .AB_inputs {
@@ -92,7 +94,7 @@
     font-family: 'Helvetica Neue', 'Helvetica';
     color: #555;
  }
- 
+
 .invoice-box table {
     margin: 0px;
     width: 100%;

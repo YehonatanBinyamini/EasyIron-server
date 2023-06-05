@@ -7,6 +7,6 @@ router.get("/fetch-pdf", pdfController.getFile);
 
 
 router.post("/create-pdf", pdfController.postCreateFile);
-
+router.post("/new-order", pdfController.postNewOrder);
     
 module.exports = router;

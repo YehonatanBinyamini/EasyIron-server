@@ -36,3 +36,17 @@ exports.postCreateFile = (req, res, next) => {
       res.send(Promise.resolve());
     });
 };
+
+exports.postNewOrder = async (req, res, next) => {
+  const shapes = req.body.map(item => item.data);
+  res.send(
+    pdfTemplate({
+      name: "יהונתן",
+      totalPrice: 222,
+      receiptId: 1,
+      data: shapes,
+      Limg: imagesData.LimageDataURI,
+      logo: imagesData.logoImageDataURI,
+    })
+  );
+}

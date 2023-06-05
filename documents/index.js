@@ -2,14 +2,15 @@ const stringStyle = require("./stringStyle");
 const { createTRforL } = require("../util/trMaker");
 module.exports = ({
   name,
-  totalPrice,
+  data,
   logo,
   receiptId,
-  length,
-  weight,
-  totalLength,
-  diameter,
-  Amount,
+   totalPrice,
+   weight,
+//   length,
+//   totalLength,
+//   diameter,
+//   Amount,
   Limg,
 }) => {
   const today = new Date();
@@ -42,32 +43,11 @@ module.exports = ({
                <td
                <td>משקל</td>
                <td>אורך כללי</td>
-               <td>קוטר</td>
-               <td>כמות</td>
-               <td>אורך</td>
+               <td>קוטר(מ"מ)</td>
+               <td>כמות(יחי')</td>
+               <td>אורך(ס"מ)</td>
             </tr>
-            <tr class="item">
-                  <td>
-                     <div class="A_B_L">
-                     <div class="A_L">
-                     <img class="img" src=${Limg} alt="L" />
-                     <div class="kubeA">
-                        A <br />
-                        12
-                     </div>
-                     </div>
-                     <div class="kubeB">
-                     B <br /> 20
-                     </div>
-                  </div>               
-               </td>
-               <td>${weight}</td>
-               <td>${totalLength}</td>
-               <td>${diameter}</td>
-               <td>${Amount}</td>
-               <td>${length}</td>
-            </tr>
-            ${createTRforL()}
+            ${createTRforL(data)}
          </table>
          <br />
          <h1 class="justify-center">סה"כ: ${totalPrice} ש"ח</h1>

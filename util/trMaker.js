@@ -1,10 +1,10 @@
 const imagesData = require("../documents/convertingImages")
 
-const Larr = [{ weight: 1, totalLength: 12, diameter: 3, Amount: 4, A: 5, B: 7  },
-              { weight: 1, totalLength: 12, diameter: 3, Amount: 4, A: 5, B: 7 }];
-function createTRforL() {
+const Larr = [{ weight: 1, totalLength: 12, diameter: 3, units: 4, A: 5, B: 7  },
+              { weight: 1, totalLength: 12, diameter: 3, units: 4, A: 5, B: 7 }];
+function createTRforL(data) {
    let result ="";
-   for (const item of Larr){
+   for (const item of data){
     result += `
     <tr class="item">
         <td>
@@ -16,14 +16,14 @@ function createTRforL() {
                     </div>
                 </div>
                 <div class="kubeB">
-                    B <br /> A ${item.B}
+                    B <br>${item.B}
                 </div>
             </div>               
         </td>
         <td>${item.weight}</td>
         <td>${item.totalLength}</td>
         <td>${item.diameter}</td>
-        <td>${item.Amount}</td>
+        <td>${item.units}</td>
         <td>${item.A} A <br>${item.B} B</td>
     </tr>`;
 }
