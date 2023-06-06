@@ -6,7 +6,6 @@ module.exports = ({
   logo,
   receiptId,
    totalPrice,
-   weight,
 //   length,
 //   totalLength,
 //   diameter,
@@ -40,7 +39,6 @@ module.exports = ({
       <table cellpadding="0" cellspacing="0">
             <tr class="heading">
                <td>צורה</td>
-               <td
                <td>משקל</td>
                <td>אורך כללי</td>
                <td>קוטר(מ"מ)</td>

@@ -1,7 +1,7 @@
 const imagesData = require("../documents/convertingImages")
 
-const Larr = [{ weight: 1, totalLength: 12, diameter: 3, units: 4, A: 5, B: 7  },
-              { weight: 1, totalLength: 12, diameter: 3, units: 4, A: 5, B: 7 }];
+//example to data = [{ weight: 1, totalLength: 12, diameter: 3, units: 4, A: 5, B: 7  },
+//              { weight: 1, totalLength: 12, diameter: 3, units: 4, A: 5, B: 7 }];
 function createTRforL(data) {
    let result ="";
    for (const item of data){
