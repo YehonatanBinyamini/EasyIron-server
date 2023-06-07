@@ -5,11 +5,11 @@ module.exports = ({
   data,
   logo,
   receiptId,
-   totalPrice,
-//   length,
-//   totalLength,
-//   diameter,
-//   Amount,
+  totalPrice,
+  //   length,
+  //   totalLength,
+  //   diameter,
+  //   Amount,
   Limg,
 }) => {
   const today = new Date();

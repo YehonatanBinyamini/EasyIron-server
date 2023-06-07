@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row-reverse;
     position: absolute;
-    margin-top: -80px;
+    margin-top: -60px;
     margin-left: -50px;
 }
 
@@ -11,7 +11,6 @@
     justify-content: center;
     align-items: center;
     margin: 30px;
-    margin-right: -20px;
     flex-direction: column;
 }
 
@@ -31,8 +30,7 @@
 }
 
 .kubeB {
-    margin-top: 50px;
-    margin-right: -45px;
+    margin-right: -30px;
     width: 50px;
     height: 50px;
     text-align: center;
@@ -72,7 +70,6 @@
      display: flex;
      justify-content: flex-end;
      align-items: flex-end;
-     flex-direction: row-reverse;
      margin-top: -70px; 
     margin-bottom: -50px;
     margin-left: auto;
@@ -83,7 +80,7 @@
 }
 
 .invoice-box {
-    max-width: 800px;
+    max-width: 100%;
     min-height: 1000px;
     margin: auto;
     padding: 30px;
@@ -106,6 +103,7 @@
  .invoice-box table td {
     padding: 50px;
     vertical-align: top;
+    flex-direction: row;
  }
  /* .invoice-box table tr td:nth-child(2) {
     text-align: right;
@@ -150,3 +148,31 @@
     text-align: center;
  }
 } */
+
+td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  tr:nth-child(6n + 1) {
+    margin-bottom: 20px;
+  }
+
+  .heading td:first-child {
+    margin-left: 20px;
+  }
+
+  @media print {
+    .kubeB {
+      margin-right: 35px;
+      margin-top: -150px;
+    }
+    .A_L {
+        margin-right: -30px;
+    }
+    .invoice-box {
+        border: none;
+        box-shadow: none;
+    }
+  }

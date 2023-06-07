@@ -1,10 +1,10 @@
-const imagesData = require("../documents/convertingImages")
+const imagesData = require("../documents/convertingImages");
 
 //example to data = [{ weight: 1, totalLength: 12, diameter: 3, units: 4, A: 5, B: 7  },
 //              { weight: 1, totalLength: 12, diameter: 3, units: 4, A: 5, B: 7 }];
 function createTRforL(data) {
-   let result ="";
-   for (const item of data){
+  let result = "";
+  for (const item of data) {
     result += `
     <tr class="item">
         <td>
@@ -26,7 +26,7 @@ function createTRforL(data) {
         <td>${item.units}</td>
         <td>${item.A} A <br>${item.B} B</td>
     </tr>`;
-}
+  }
   return result;
 }
 

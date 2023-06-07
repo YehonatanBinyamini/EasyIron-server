@@ -1,6 +1,6 @@
 const pdfTemplate = require("../documents/index");
 const pdf = require("html-pdf");
-const imagesData = require("../documents/convertingImages")
+const imagesData = require("../documents/convertingImages");
 
 exports.getOrderTemplate = (req, res, next) => {
   res.send(
@@ -26,8 +26,19 @@ exports.getFile = (req, res, next) => {
 };
 
 exports.postCreateFile = (req, res, next) => {
+  const shapes = req.body.map((item) => item.data);
   pdf
-    .create(pdfTemplate(req.body), {})
+    .create(
+      pdfTemplate({
+        name: "יהונתן",
+        totalPrice: 222,
+        receiptId: 1,
+        data: shapes,
+        Limg: imagesData.LimageDataURI,
+        logo: imagesData.logoImageDataURI,
+      }),
+      {}
+    )
     .toFile(`${__dirname}/result.pdf`, (err) => {
       if (err) {
         res.send(Promise.reject());
@@ -38,7 +49,7 @@ exports.postCreateFile = (req, res, next) => {
 };
 
 exports.postNewOrder = async (req, res, next) => {
-  const shapes = req.body.map(item => item.data);
+  const shapes = req.body.map((item) => item.data);
   res.send(
     pdfTemplate({
       name: "יהונתן",
@@ -49,4 +60,4 @@ exports.postNewOrder = async (req, res, next) => {
       logo: imagesData.logoImageDataURI,
     })
   );
-}
+};
