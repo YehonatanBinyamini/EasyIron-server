@@ -49,7 +49,7 @@ exports.postCreateFile = (req, res, next) => {
 };
 
 exports.postNewOrder = async (req, res, next) => {
-  const shapes = req.body.map((item) => item.data);
+  const shapes = req.body; //.map((item) => item.data);
   res.send(
     pdfTemplate({
       name: "יהונתן",
