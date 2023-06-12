@@ -9,6 +9,8 @@ function createTRs(data) {
       allTRs += createTRforL(item);
     } else if (item.shape === "line") {
       allTRs += createTRforLine(item);
+    } else if (item.shape === "shape3") {
+      allTRs += createTRforShape3(item);
     }
   }
   return allTRs;
@@ -62,6 +64,39 @@ function createTRforLine(item) {
         <td>${item.units}</td>
         <td>${item.A} A</td>
     </tr>`;
+  return result;
+}
+
+function createTRforShape3(item) {
+  let result = "";
+  result += `
+      <tr class="item">
+          <td>
+          <div class="letters_and_img">
+            <div class="A_L">
+                <div class="kubeA_shape3">
+                ${item.A} A
+                </div>
+                <img class="shape3_img" src=${imagesData.shape3ImageDataURI} alt="shape3" />
+                <div class="kubeB_shape3">
+                B <br /> ${item.B}
+                </div>
+                <div class="kubeC_shape3">
+                C <br /> ${item.C}
+                </div>
+                <div class="kubeD_shape3">
+                D <br /> ${item.D}
+                </div>
+            </div>
+        </div>
+                       
+          </td>
+          <td>${item.weight}</td>
+          <td>${item.totalLength}</td>
+          <td>${item.diameter}</td>
+          <td>${item.units}</td>
+          <td class="no-space">${item.A} A<br/>${item.B} B<br/>${item.C} C<br/>${item.D} D</td>
+      </tr>`;
   return result;
 }
 

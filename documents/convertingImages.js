@@ -15,7 +15,14 @@ const lineImageData = fs.readFileSync(linePath);
 const lineImageBase64 = Buffer.from(lineImageData).toString('base64');
 const lineImageDataURI = `data:image/png;base64,${lineImageBase64}`;
 
+const shape3Path = path.resolve(__dirname,"../", "documents", "images", "shape3.png");
+const shape3ImageData = fs.readFileSync(shape3Path);
+const shape3ImageBase64 = Buffer.from(shape3ImageData).toString('base64');
+const shape3ImageDataURI = `data:image/png;base64,${shape3ImageBase64}`;
+
+
 
 exports.LimageDataURI = LimageDataURI;
 exports.logoImageDataURI =logoImageDataURI
 exports.lineImageDataURI =lineImageDataURI
+exports.shape3ImageDataURI =shape3ImageDataURI
