@@ -26,7 +26,7 @@ exports.getFile = (req, res, next) => {
 };
 
 exports.postCreateFile = (req, res, next) => {
-  const shapes = req.body.map((item) => item.data);
+  const shapes = req.body;
   pdf
     .create(
       pdfTemplate({
@@ -49,7 +49,7 @@ exports.postCreateFile = (req, res, next) => {
 };
 
 exports.postNewOrder = async (req, res, next) => {
-  const shapes = req.body; //.map((item) => item.data);
+  const shapes = req.body;
   res.send(
     pdfTemplate({
       name: "יהונתן",

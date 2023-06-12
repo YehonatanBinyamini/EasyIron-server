@@ -21,6 +21,14 @@
     text-align: center;
 }
 
+.line-img {
+    width: 60px;
+    height: 20px;
+    margin-right: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 .kubeA {
     margin-top: -15px;
     width: 50px;
@@ -174,5 +182,9 @@ td {
     .invoice-box {
         border: none;
         box-shadow: none;
+    }
+
+    .line-img {
+        margin-right: -10px;
     }
   }

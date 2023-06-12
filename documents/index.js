@@ -1,5 +1,8 @@
 const stringStyle = require("./stringStyle");
-const { createTRforL } = require("../util/trMaker");
+const imagesData = require("./convertingImages");
+const logo = imagesData.logoImageDataURI;
+
+const { createTRs } = require("../util/trMaker");
 module.exports = ({
   name,
   data,
@@ -10,8 +13,7 @@ module.exports = ({
   //   totalLength,
   //   diameter,
   //   Amount,
-  Limg,
-}) => {
+  }) => {
   const today = new Date();
   return `
     <!doctype html>
@@ -45,7 +47,7 @@ module.exports = ({
                <td>כמות(יחי')</td>
                <td>אורך(ס"מ)</td>
             </tr>
-            ${createTRforL(data)}
+            ${createTRs(data)}
          </table>
          <br />
          <h1 class="justify-center">סה"כ: ${totalPrice} ש"ח</h1>
