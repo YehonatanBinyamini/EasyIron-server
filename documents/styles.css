@@ -22,7 +22,7 @@
 }
 
 .line-img {
-    width: 60px;
+    width: 70px;
     height: 20px;
     margin-right: 5px;
     margin-bottom: 20px;
@@ -223,6 +223,15 @@ td {
     padding-bottom: 0 !important;
   }
   
+  .A_line{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 30px;
+      margin-top: 50px;
+      flex-direction: column;
+  }
+
   @media print {
     .kubeB {
       margin-right: 35px;
@@ -241,6 +250,7 @@ td {
     .line-img {
         margin-right: -10px;
     }
+
 
     .letters_and_img {
         justify-content: center;

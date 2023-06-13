@@ -50,7 +50,7 @@ function createTRforLine(item) {
     <tr class="item">
         <td>
             <div class="A_B_L">
-                <div class="A_L">
+                <div class="A_line">
                     <img class="line-img" src=${imagesData.lineImageDataURI} alt="line" />
                     <div class="kubeA">
                         A ${item.A}
